@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,8 +44,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Analytics />
-        <SpeedInsights />
+        {/* THESIS: make the source/result loop feel like a physical proofing bench.
+OWN-WORLD: warm paper, ink green, registration red, and blue editorial marks split one draft into two plates.
+STORY: type a source, watch its proof change, then copy the draft when the shape reads correctly.
+FIRST VIEWPORT: the thesis, local boundary, source/proof controls, and first live content appear before any footer.
+FORM: ruled paper panels, plate labels, and editorial type define every control and state.
+SEED: 4922a2b3 · assigned direction 7 · operate mode.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance */}
         {children}
       </body>
     </html>
